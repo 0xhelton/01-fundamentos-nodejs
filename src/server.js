@@ -19,13 +19,15 @@ import http, { request } from "node:http";
 
 // JSON - JavaScript Object Notation
 
+// Headers - (Request, Response) => Metadados
+
 const users = [];
 
 const server = http.createServer((resquest, response) => {
   const { method, url } = resquest;
 
   if (method === "GET" && url === "/users") {
-    return response.end(JSON.stringify(users));
+    return response.setHeader("Content-type", "application/json").end(JSON.stringify(users));
   }
 
   if (method === "POST" && url === "/users") {
