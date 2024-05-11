@@ -36,9 +36,11 @@ const server = http.createServer((resquest, response) => {
       name: "Helton Muniz",
       email: "0xhelton@gmail.com",
     });
+
+    return response.writeHead(201).end();
   }
 
-  return response.end("Hello World");
+  return response.writeHead(404).end();
 });
 
 server.listen(3333);
