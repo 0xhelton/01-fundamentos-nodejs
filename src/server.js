@@ -25,7 +25,6 @@ const server = http.createServer((resquest, response) => {
   const { method, url } = resquest;
 
   if (method === "GET" && url === "/users") {
-    .setHeader('Content-type')
     return response.end(JSON.stringify(users));
   }
 
